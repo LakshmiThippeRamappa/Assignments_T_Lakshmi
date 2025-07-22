@@ -1,0 +1,99 @@
+package com.wipro.Assignment;
+import java.util.Scanner;
+
+public class Assignment1{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        char again;
+
+        do {
+            // Displaying the menu
+            System.out.println("\n********** MENU **********");
+            System.out.println("1. Print Table of a Number");
+            System.out.println("2. Calculate Factorial");
+            System.out.println("3. Check Prime Number");
+            System.out.println("4. Print Fibonacci Series");
+            System.out.println("5. Exit");
+            System.out.println("**************************");
+            System.out.print("Enter your choice: ");
+            int choice = input.nextInt();
+
+            switch (choice) {
+                case 1:
+                    // Print multiplication table
+                    System.out.print("Enter a number: ");
+                    int num = input.nextInt();
+                    for (int i = 1; i <= 10; i++) {
+                        System.out.println(num + " x " + i + " = " + (num * i));
+                    }
+                    break;
+
+                case 2:
+                    // Calculate factorial
+                    System.out.print("Enter a number: ");
+                    int fact = input.nextInt();
+                    int result = 1;
+                    for (int i = 1; i <= fact; i++) {
+                        result = result * i;
+                    }
+                    System.out.println("Factorial of " + fact + " is " + result);
+                    break;
+
+                case 3:
+                    // Check if number is prime
+                    System.out.print("Enter a number: ");
+                    int number = input.nextInt();
+                    boolean isPrime = true;
+                    if (number <= 1) {
+                        isPrime = false;
+                    } else {
+                        int i = 2;
+                        while (i <= number / 2) {
+                            if (number % i == 0) {
+                                isPrime = false;
+                                break;
+                            }
+                            i++;
+                        }
+                    }
+                    if (isPrime) {
+                        System.out.println(number + " is a Prime Number.");
+                    } else {
+                        System.out.println(number + " is NOT a Prime Number.");
+                    }
+                    break;
+
+                case 4:
+                    // Print Fibonacci series
+                    System.out.print("Enter how many terms: ");
+                    int terms = input.nextInt();
+                    int a = 0, b = 1;
+                    System.out.print("Fibonacci Series: ");
+                    for (int i = 1; i <= terms; i++) {
+                        System.out.print(a + " ");
+                        int next = a + b;
+                        a = b;
+                        b = next;
+                    }
+                    System.out.println();
+                    break;
+
+                case 5:
+                    // Exit
+                    System.out.println("Exiting the program.");
+                    return;
+
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+
+            // Ask user if they want to continue
+            System.out.print("Back to Menu? (Y/N): ");
+            again = input.next().charAt(0);
+
+        } while (again == 'Y' || again == 'y');
+
+        System.out.println("Thank you for using the program!");
+        input.close();
+    }
+}

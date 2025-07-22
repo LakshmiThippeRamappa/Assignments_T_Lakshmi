@@ -1,0 +1,152 @@
+package com.wipro.Assignment;
+
+public class StringUtility {
+	 public int countVowels(String str) {
+		 	
+	        int count = 0;
+	        str = str.toLowerCase();
+	        for (char ch : str.toCharArray()) {
+	        	if(Character.isLetter(ch))
+	        	{
+		            if ("aeiou".indexOf(ch) != -1) {
+		                count++;
+		            }
+	        	}
+	        }
+	        return count;
+	    }
+	 
+	 public int countConsonants(String str) {
+	        int count = 0;
+	        str = str.toLowerCase();
+	        for (char ch : str.toCharArray()) {
+	            if (Character.isLetter(ch) && "aeiou".indexOf(ch) == -1) {
+	                count++;
+	            }
+	        }
+	        return count;
+	    }
+	 
+	 public boolean isPalindrome(String str) {
+	        str = str.toLowerCase();
+	        StringBuilder reversed = new StringBuilder(str);
+	        reversed.reverse();
+	        return str.equals(reversed.toString());
+	    }
+	 
+	 public String reverseString(String str) {
+		 StringBuilder sb = new StringBuilder(str);
+		 sb.reverse();
+		 return sb.toString();
+	    }
+	 
+	 public String toUpperCase(String str) {
+	        return str.toUpperCase();
+	    }
+
+	    public String toLowerCase(String str) {
+	        return str.toLowerCase();
+	    }
+	    
+	    public String replaceWord(String str, String oldWord, String newWord) {
+	        return str.replace(oldWord, newWord);
+	    }
+}
+
+/*
+
+********** STRING MENU **********
+1. Count Vowels and Consonants
+2. Check Palindrome
+3. Reverse String
+4. Convert to UPPERCASE
+5. Convert to lowercase
+6. Replace a word
+7. Exit
+**********************************
+Enter your choice: 2
+Enter a string: madam
+It's a palindrome.
+
+Back to Menu? (Y/N): y
+
+********** STRING MENU **********
+1. Count Vowels and Consonants
+2. Check Palindrome
+3. Reverse String
+4. Convert to UPPERCASE
+5. Convert to lowercase
+6. Replace a word
+7. Exit
+**********************************
+Enter your choice: 2
+Enter a string: lakshmi
+Not a palindrome.
+
+Back to Menu? (Y/N): y
+
+********** STRING MENU **********
+1. Count Vowels and Consonants
+2. Check Palindrome
+3. Reverse String
+4. Convert to UPPERCASE
+5. Convert to lowercase
+6. Replace a word
+7. Exit
+**********************************
+Enter your choice: 3
+Enter a string: hello
+Reversed: olleh
+
+Back to Menu? (Y/N): y
+
+********** STRING MENU **********
+1. Count Vowels and Consonants
+2. Check Palindrome
+3. Reverse String
+4. Convert to UPPERCASE
+5. Convert to lowercase
+6. Replace a word
+7. Exit
+**********************************
+Enter your choice: 4
+Enter a string: wipro
+UPPERCASE: WIPRO
+
+Back to Menu? (Y/N): y
+
+********** STRING MENU **********
+1. Count Vowels and Consonants
+2. Check Palindrome
+3. Reverse String
+4. Convert to UPPERCASE
+5. Convert to lowercase
+6. Replace a word
+7. Exit
+**********************************
+Enter your choice: 5
+Enter a string: My Name is Lakshmi
+lowercase: my name is lakshmi
+
+Back to Menu? (Y/N): y
+
+********** STRING MENU **********
+1. Count Vowels and Consonants
+2. Check Palindrome
+3. Reverse String
+4. Convert to UPPERCASE
+5. Convert to lowercase
+6. Replace a word
+7. Exit
+**********************************
+Enter your choice: 6
+Enter the full string: Hello World
+Enter word to replace: World
+Enter new word: Team Wipro
+Result: Hello Team Wipro
+
+Back to Menu? (Y/N): 7
+Happy Day!!!
+*/
+
+
